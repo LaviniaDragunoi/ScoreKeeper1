@@ -5,10 +5,7 @@
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_main"
         style="@style/MatchWrapStyle"
-        tools:context="com.example.android.scoreke
-
-
-        eper.MainActivity">
+        tools:context="com.example.android.scorekeeper.MainActivity">
 
         <LinearLayout
             style="@style/MatchMatchStyle">
