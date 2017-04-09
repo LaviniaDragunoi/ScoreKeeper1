@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Score Keeper</string>
+    <string name="counting">0</string>
+    <string name="score">Score</string>
+    <string name="offsides">Offsides</string>
+    <string name="corners">Corners</string>
+    <string name="fouls">Fouls</string>
+    <string name="reset">Reset</string>
+    <string-array name="team_array">
+        <item>Select Team</item>
+        <item>Belenenses</item>
+        <item>San Felipe</item>
+        <item>Coquimbo</item>
+        <item>Arouca</item>
+    </string-array>
+    <integer-array name="logo_echipe">
+        <item>@drawable/footballball</item>
+        <item>@drawable/belenenses</item>
+        <item>@drawable/sanfelipe</item>
+        <item>@drawable/coquimbo</item>
+        <item>@drawable/arouca</item>
+    </integer-array>
+</resources>

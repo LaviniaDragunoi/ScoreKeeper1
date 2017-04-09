@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ScrollViewStyle">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        style="@style/MatchWrapStyle"
+        tools:context="com.example.android.scoreke
+
+
+        eper.MainActivity">
+
+        <LinearLayout
+            style="@style/MatchMatchStyle">
+
+            <LinearLayout
+                android:id="@+id/team_a"
+                style="@style/TeamLayoutStyle">
+
+                <RelativeLayout
+                    style="@style/LayoutStyle">
+
+                    <Spinner
+                        android:id="@+id/spinner1"
+                        style="@style/TeamStyle"
+                        android:entries="@array/team_array">
+                    </Spinner>
+
+                    <ImageView
+                        android:id="@+id/logo_a"
+                        style="@style/LogoStyle"
+                        android:layout_below="@id/spinner1"
+                        android:contentDescription="@string/app_name"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/team_a_score"
+                    style="@style/ScoreStyle"
+                    android:text="@string/counting" />
+
+                <Button
+                    android:onClick="addOneForTeamA"
+                    style="@style/ScoreButtonStyle"
+                    android:text="@string/score" />
+
+                <LinearLayout
+                    style="@style/LayoutStyle">
+
+                    <Button
+                        style="@style/LeftButtonsStyle"
+                        android:onClick="addOffsideForTeamA"
+                        android:text="@string/offsides" />
+
+                    <TextView
+                        android:id="@+id/team_a_offsides"
+                        style="@style/NumberStyle"
+                        android:text="@string/counting" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LayoutStyle">
+
+                    <Button
+                        style="@style/LeftButtonsStyle"
+                        android:onClick="addCornerForTeamA"
+                        android:text="@string/corners" />
+
+                    <TextView
+                        android:id="@+id/team_a_corners"
+                        style="@style/NumberStyle"
+                        android:text="@string/counting" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LayoutStyle">
+
+                    <Button
+                        style="@style/LeftButtonsStyle"
+                        android:onClick="addFoulForTeamA"
+                        android:text="@string/fouls" />
+
+                    <TextView
+                        android:id="@+id/team_a_fouls"
+                        style="@style/NumberStyle"
+                        android:text="@string/counting" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/width_view"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/middle_line_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/lineColor" />
+
+            <LinearLayout
+                android:id="@+id/team_b"
+                style="@style/TeamLayoutStyle">
+
+                <RelativeLayout
+                    style="@style/LayoutStyle">
+
+
+                    <Spinner
+                        android:id="@+id/spinner2"
+                        style="@style/TeamStyle"
+                        android:entries="@array/team_array">
+                    </Spinner>
+
+                    <ImageView
+                        android:id="@+id/logo_b"
+                        style="@style/LogoStyle"
+                        android:layout_below="@id/spinner2"
+                        android:src="@drawable/footballball"
+                        android:contentDescription="@string/app_name"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/team_b_score"
+                    style="@style/ScoreStyle"
+                    android:text="@string/counting" />
+
+                <Button
+                    android:onClick="addOneForTeamB"
+                    style="@style/ScoreButtonStyle"
+                    android:text="@string/score" />
+
+                <LinearLayout
+                    style="@style/LayoutStyle">
+
+                    <TextView
+                        android:id="@+id/team_b_offsides"
+                        style="@style/NumberStyle"
+                        android:text="@string/counting" />
+
+                    <Button
+                        style="@style/RightButtonsStyle"
+                        android:text="@string/offsides"
+                        android:onClick="addOffsideForTeamB"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LayoutStyle">
+
+                    <TextView
+                        android:id="@+id/team_b_corners"
+                        style="@style/NumberStyle"
+                        android:text="@string/counting" />
+
+                    <Button
+                        style="@style/RightButtonsStyle"
+                        android:text="@string/corners"
+                        android:onClick="addCornerForTeamB"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LayoutStyle">
+
+                    <TextView
+                        android:id="@+id/team_b_fouls"
+                        style="@style/NumberStyle"
+                        android:text="@string/counting" />
+
+                    <Button
+                        style="@style/RightButtonsStyle"
+                        android:text="@string/fouls"
+                        android:onClick="addFoulForTeamB"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/reset"
+            android:onClick="resetAll"
+            style="@style/ResetButtonStyle"/>
+    </RelativeLayout>
+</ScrollView>
