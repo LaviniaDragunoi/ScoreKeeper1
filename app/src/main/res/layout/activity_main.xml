@@ -7,27 +7,24 @@
         style="@style/MatchWrapStyle"
         tools:context="com.example.android.scorekeeper.MainActivity">
 
-        <LinearLayout
-            style="@style/MatchMatchStyle">
+        <LinearLayout style="@style/MatchMatchStyle">
 
             <LinearLayout
                 android:id="@+id/team_a"
                 style="@style/TeamLayoutStyle">
 
-                <RelativeLayout
-                    style="@style/LayoutStyle">
+                <RelativeLayout style="@style/LayoutStyle">
 
                     <Spinner
                         android:id="@+id/spinner1"
                         style="@style/TeamStyle"
-                        android:entries="@array/team_array">
-                    </Spinner>
+                        android:entries="@array/team_array"/>
 
                     <ImageView
                         android:id="@+id/logo_a"
                         style="@style/LogoStyle"
                         android:layout_below="@id/spinner1"
-                        android:contentDescription="@string/app_name"/>
+                        android:contentDescription="@string/app_name" />
                 </RelativeLayout>
 
                 <TextView
@@ -36,12 +33,11 @@
                     android:text="@string/counting" />
 
                 <Button
-                    android:onClick="addOneForTeamA"
                     style="@style/ScoreButtonStyle"
+                    android:onClick="addOneForTeamA"
                     android:text="@string/score" />
 
-                <LinearLayout
-                    style="@style/LayoutStyle">
+                <LinearLayout style="@style/LayoutStyle">
 
                     <Button
                         style="@style/LeftButtonsStyle"
@@ -54,8 +50,7 @@
                         android:text="@string/counting" />
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LayoutStyle">
+                <LinearLayout style="@style/LayoutStyle">
 
                     <Button
                         style="@style/LeftButtonsStyle"
@@ -68,8 +63,7 @@
                         android:text="@string/counting" />
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LayoutStyle">
+                <LinearLayout style="@style/LayoutStyle">
 
                     <Button
                         style="@style/LeftButtonsStyle"
@@ -83,33 +77,26 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <View
-                android:layout_width="@dimen/width_view"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/middle_line_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@color/lineColor" />
+            <View style="@style/ViewStyle" />
 
             <LinearLayout
                 android:id="@+id/team_b"
                 style="@style/TeamLayoutStyle">
 
-                <RelativeLayout
-                    style="@style/LayoutStyle">
+                <RelativeLayout style="@style/LayoutStyle">
 
 
                     <Spinner
                         android:id="@+id/spinner2"
                         style="@style/TeamStyle"
-                        android:entries="@array/team_array">
-                    </Spinner>
+                        android:entries="@array/team_array"/>
 
                     <ImageView
                         android:id="@+id/logo_b"
                         style="@style/LogoStyle"
                         android:layout_below="@id/spinner2"
-                        android:src="@drawable/footballball"
-                        android:contentDescription="@string/app_name"/>
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/footballball" />
                 </RelativeLayout>
 
                 <TextView
@@ -118,12 +105,11 @@
                     android:text="@string/counting" />
 
                 <Button
-                    android:onClick="addOneForTeamB"
                     style="@style/ScoreButtonStyle"
+                    android:onClick="addOneForTeamB"
                     android:text="@string/score" />
 
-                <LinearLayout
-                    style="@style/LayoutStyle">
+                <LinearLayout style="@style/LayoutStyle">
 
                     <TextView
                         android:id="@+id/team_b_offsides"
@@ -132,12 +118,11 @@
 
                     <Button
                         style="@style/RightButtonsStyle"
-                        android:text="@string/offsides"
-                        android:onClick="addOffsideForTeamB"/>
+                        android:onClick="addOffsideForTeamB"
+                        android:text="@string/offsides" />
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LayoutStyle">
+                <LinearLayout style="@style/LayoutStyle">
 
                     <TextView
                         android:id="@+id/team_b_corners"
@@ -146,12 +131,11 @@
 
                     <Button
                         style="@style/RightButtonsStyle"
-                        android:text="@string/corners"
-                        android:onClick="addCornerForTeamB"/>
+                        android:onClick="addCornerForTeamB"
+                        android:text="@string/corners" />
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LayoutStyle">
+                <LinearLayout style="@style/LayoutStyle">
 
                     <TextView
                         android:id="@+id/team_b_fouls"
@@ -160,17 +144,17 @@
 
                     <Button
                         style="@style/RightButtonsStyle"
-                        android:text="@string/fouls"
-                        android:onClick="addFoulForTeamB"/>
+                        android:onClick="addFoulForTeamB"
+                        android:text="@string/fouls" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
         <Button
+            style="@style/ResetButtonStyle"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:text="@string/reset"
             android:onClick="resetAll"
-            style="@style/ResetButtonStyle"/>
+            android:text="@string/reset" />
     </RelativeLayout>
 </ScrollView>

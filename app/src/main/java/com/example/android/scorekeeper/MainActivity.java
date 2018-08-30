@@ -19,9 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String CORNERS_TEAM_B = "teambcorners";
     private static final String FOULS_TEAM_A = "teamafouls";
     private static final String FOULS_TEAM_B = "teambfouls";
-    private ImageView image1, image2;
-    private Spinner spinner1, spinner2;
-    private TypedArray imgs1, imgs2;
     int scoreTeamA = 0;
     int scoreTeamB = 0;
     int offsidesTeamA = 0;
@@ -30,13 +27,16 @@ public class MainActivity extends AppCompatActivity {
     int cornersTeamB = 0;
     int foulsTeamA = 0;
     int foulsTeamB = 0;
-
+    private ImageView image1, image2;
+    private Spinner spinner1, spinner2;
+    private TypedArray imgs1, imgs2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (savedInstanceState !=null){
+        //Gets in all the values saved in Bundle on onSaveInstanceState methode.
+        if (savedInstanceState != null) {
             scoreTeamA = savedInstanceState.getInt(SCORE_TEAM_A, 0);
             scoreTeamB = savedInstanceState.getInt(SCORE_TEAM_B, 0);
             offsidesTeamA = savedInstanceState.getInt(OFFSIDES_TEAM_A, 0);
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         image1 = (ImageView) findViewById(R.id.logo_a);
         spinner1 = (Spinner) findViewById(R.id.spinner1);
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, teams);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, teams);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(dataAdapter);
 
@@ -113,107 +113,115 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //* Add a goal for Teama A.
-    public void addOneForTeamA (View v) {
+    //* Add a goal for Team A.
+    public void addOneForTeamA(View v) {
 
         scoreTeamA = scoreTeamA + 1;
         displayScoreForTeamA(scoreTeamA);
     }
+
     /* Display score for team A.
      */
-    public void displayScoreForTeamA (int score) {
+    public void displayScoreForTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
-    scoreView.setText(String.valueOf(score));
+        scoreView.setText(String.valueOf(score));
     }
 
-    //* Add an offside for Teama A.
-    public void addOffsideForTeamA (View v) {
+    //* Add an offside for Team A.
+    public void addOffsideForTeamA(View v) {
 
         offsidesTeamA = offsidesTeamA + 1;
         displayOffsidesForTeamA(offsidesTeamA);
     }
+
     /* Display offsides for team A.
      */
-    public void displayOffsidesForTeamA (int offside) {
+    public void displayOffsidesForTeamA(int offside) {
         TextView offsideView = (TextView) findViewById(R.id.team_a_offsides);
         offsideView.setText(String.valueOf(offside));
     }
 
-    //* Add a corner for Teama A.
-    public void addCornerForTeamA (View v) {
+    //* Add a corner for Team A.
+    public void addCornerForTeamA(View v) {
 
         cornersTeamA = cornersTeamA + 1;
         displayCornersForTeamA(cornersTeamA);
     }
+
     /* Display corners for team A.
      */
-    public void displayCornersForTeamA (int corner) {
+    public void displayCornersForTeamA(int corner) {
         TextView cornerView = (TextView) findViewById(R.id.team_a_corners);
         cornerView.setText(String.valueOf(corner));
     }
 
-    //* Add a foul for Teama A.
-    public void addFoulForTeamA (View v) {
+    //* Add a foul for Team A.
+    public void addFoulForTeamA(View v) {
 
         foulsTeamA = foulsTeamA + 1;
         displayFoulsForTeamA(foulsTeamA);
     }
+
     /* Display fouls for team A.
      */
-    public void displayFoulsForTeamA (int foul) {
+    public void displayFoulsForTeamA(int foul) {
         TextView foulView = (TextView) findViewById(R.id.team_a_fouls);
         foulView.setText(String.valueOf(foul));
     }
 
     //* Add a goal for Teama B.
-    public void addOneForTeamB (View v) {
+    public void addOneForTeamB(View v) {
 
         scoreTeamB = scoreTeamB + 1;
         displayScoreForTeamB(scoreTeamB);
     }
+
     /* Display score for team B.
      */
-    public void displayScoreForTeamB (int score) {
+    public void displayScoreForTeamB(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
     }
 
     //* Add an offside for Teama B.
 
-    public void addOffsideForTeamB (View v) {
+    public void addOffsideForTeamB(View v) {
 
         offsidesTeamB = offsidesTeamB + 1;
         displayOffsidesForTeamB(offsidesTeamB);
     }
+
     /* Display offsides for team B.
      */
-    public void displayOffsidesForTeamB (int offside) {
+    public void displayOffsidesForTeamB(int offside) {
         TextView offsideView = (TextView) findViewById(R.id.team_b_offsides);
         offsideView.setText(String.valueOf(offside));
     }
 
     //* Add a corner for Teama B.
-    public void addCornerForTeamB (View v) {
+    public void addCornerForTeamB(View v) {
 
         cornersTeamB = cornersTeamB + 1;
         displayCornersForTeamB(cornersTeamB);
     }
+
     /* Display corners for team B.
      */
-    public void displayCornersForTeamB (int corner) {
+    public void displayCornersForTeamB(int corner) {
         TextView cornerView = (TextView) findViewById(R.id.team_b_corners);
         cornerView.setText(String.valueOf(corner));
     }
 
     //* Add a foul for Teama B.
-    public void addFoulForTeamB (View v) {
+    public void addFoulForTeamB(View v) {
 
         foulsTeamB = foulsTeamB + 1;
         displayFoulsForTeamB(foulsTeamB);
     }
+
     /* Display fouls for team B.
      */
-    public void displayFoulsForTeamB (int foul) {
+    public void displayFoulsForTeamB(int foul) {
         TextView foulView = (TextView) findViewById(R.id.team_b_fouls);
         foulView.setText(String.valueOf(foul));
     }
@@ -221,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
     //* Override the onSaveInstanceState method, this will write the variables values to the Bundle
 
     @Override
-    public void onSaveInstanceState(Bundle savedInstanceState){
+    public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putInt(SCORE_TEAM_A, scoreTeamA);
         savedInstanceState.putInt(SCORE_TEAM_B, scoreTeamB);
@@ -232,10 +240,11 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putInt(FOULS_TEAM_A, foulsTeamA);
         savedInstanceState.putInt(FOULS_TEAM_B, foulsTeamB);
     }
-/* Reset all values fr both teams.
 
- */
-    public void resetAll (View V) {
+    /* Reset all values fr both teams.
+
+     */
+    public void resetAll(View V) {
         scoreTeamA = 0;
         displayScoreForTeamA(scoreTeamA);
         scoreTeamB = 0;
@@ -254,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
         displayFoulsForTeamB(foulsTeamB);
 
     }
- }
+}
 
 
 
